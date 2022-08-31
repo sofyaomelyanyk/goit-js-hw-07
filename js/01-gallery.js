@@ -4,7 +4,6 @@ import { galleryItems } from "./gallery-items.js";
 console.log(galleryItems);
 
 const gallery = document.querySelector(".gallery");
-console.log(gallery);
 
 const imagesMarkUp = createItemsGallery(galleryItems);
 
@@ -13,14 +12,6 @@ gallery.insertAdjacentHTML("afterbegin", imagesMarkUp);
 gallery.addEventListener("click", onImageClick);
 
 gallery.addEventListener("click", onOpenModalWindow);
-
-// gallery.addEventListener("keydown", onCloseModalWindow);
-
-// function onCloseModalWindow(e) {
-//   if (e.key === "Escape") {
-
-//   }
-// }
 
 function onImageClick(e) {
   if (e.target.nodeName !== "IMG") {
