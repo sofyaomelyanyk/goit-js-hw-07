@@ -9,18 +9,14 @@ const imagesMarkUp = createItemsGallery(galleryItems);
 
 gallery.insertAdjacentHTML("afterbegin", imagesMarkUp);
 
-gallery.addEventListener("click", onImageClick);
-
 gallery.addEventListener("click", onOpenModalWindow);
-
-function onImageClick(e) {
-  if (e.target.nodeName !== "IMG") {
-    return;
-  }
-}
 
 function onOpenModalWindow(e) {
   e.preventDefault();
+
+  if (e.target.nodeName !== "IMG") {
+    return;
+  }
 
   const instance = basicLightbox.create(`
     <img src="${e.target.dataset.source}" width="800" height="600">
